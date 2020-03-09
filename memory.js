@@ -1,0 +1,1 @@
+console.log("memory.js file reached");
