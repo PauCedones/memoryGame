@@ -65,33 +65,76 @@ const reset_var_shallow = () =>{
 
 // Reiniciar variables que deberian ser reseteadas si matcheaste mal o reiniciaste 
 const reset_var_deep = () =>{
-    //
-    var red =0;
-    var blue =0;
-    var yellow =0;
-    var purple =0;
-    var black =0;
+    //usado en el loop for para chequear cuantas veces se uso cada color
+    var red =0,
+        blue =0,
+        yellow =0,
+        purple =0,
+        black =0;
 
     // arrays vacios para meter nuevos tiles
     red_array = [],
-    blue_array = [],
-    yellow_array = [],
-    purple_array = [],
-    black_array = [];
+        blue_array = [],
+        yellow_array = [],
+        purple_array = [],
+        black_array = [];
 
-    for (var i=0; i<10; i++){
-        var number= Math.floor(Math.random()*5);
-        
-        if(number == 0){
-           if(red < 2){
-                document.getElementById(titles_array[i]).style.backgroundColor = "Red";            
+    //ahora viene el loop mas grande de tu existencia (?
+    for (var x =0; x < 10; x++){
+        var nmbr = Math.floor(Math.random() * 5);
+
+        if(nmbr === 0){
+            if(red < 2){
                 red++;
-                red_array.push(titles_array[i]);
-           }
-           else{
-               i--;
-           } 
+                red_array.push(titles_array[x]);
+                document.getElementById(red_array[red -1]).style.backgroundColor = "red";
+            }
+            else{
+                x--;
+            }
         }
+        if(nmbr === 1){
+            if(blue < 2){
+                blue++;
+                blue_array.push(titles_array[x]);
+            }
+            else{
+                x--;
+            }
+        }
+        if(nmbr === 2){
+            if(yellow < 2){
+                yellow++;
+                yellow_array.push(titles_array[x]);
+            }
+            else{
+                x--;
+            }
+        }
+        if(nmbr === 3){
+            if(purple < 2){
+                purple++;
+                purple_array.push(titles_array[x]);
+            }
+            else{
+                x--;
+            }
+        }
+        if(nmbr === 4){
+            if(black < 2){
+                black++;
+                black_array.push(titles_array[x]);
+            }
+            else{
+                x--;
+            }
+        }
+    console.log(red_array);
+    console.log(blue_array);
+    console.log(yellow_array);
+    console.log(purple_array);
+    console.log(black_array);
+    
     }
 }
 
